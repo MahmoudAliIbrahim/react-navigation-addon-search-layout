@@ -34,6 +34,7 @@ export default class SearchLayout extends React.Component {
         <Header
           backgroundColor={this.props.headerBackgroundColor}
           tintColor={this.props.headerTintColor}
+          iconColor={this.props.headerIconColor}
           backButton={Platform.OS === 'android'}>
           <SearchBar
             onChangeQuery={this._handleChangeQuery}
