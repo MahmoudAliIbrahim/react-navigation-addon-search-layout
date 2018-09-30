@@ -50,7 +50,7 @@ export default class SearchBar extends React.PureComponent {
                 <Ionicons
                   name="md-close"
                   size={25}
-                  color={this.props.tintColor}
+                  color={this.props.iconColor}
                 />
               </Touchable>
             : null}

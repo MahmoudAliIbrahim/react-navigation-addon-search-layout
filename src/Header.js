@@ -21,8 +21,8 @@ export default class Header extends React.PureComponent {
     return (
       <HeaderBackButton
         onPress={this._navigateBack}
-        pressColorAndroid={this.props.tintColor || '#fff'}
-        tintColor={this.props.tintColor}
+        pressColorAndroid={this.props.tintColor}
+        tintColor={this.props.iconColor}
         title={this.props.backButtonTitle || null}
         truncatedTitle={this.props.backButtonTruncatedTitle || null}
         titleStyle={this.props.backButtonTitleStyle || null}

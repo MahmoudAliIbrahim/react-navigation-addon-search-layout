@@ -48,6 +48,7 @@ export default class SearchLayout extends React.Component {
             tintColor={
               this.props.searchInputTintColor || this.props.headerTintColor
             }
+            iconColor={this.props.headerIconColor}
           />
         </Header>
 
