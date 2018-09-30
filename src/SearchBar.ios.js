@@ -11,8 +11,6 @@ import {
   View,
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
-
-// TODO: remove dependency on Expo
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Layout = {
