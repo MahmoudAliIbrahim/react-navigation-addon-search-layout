@@ -38,6 +38,8 @@ export default class SearchBar extends React.PureComponent {
           onSubmitEditing={this._handleSubmit}
           onChangeText={this._handleChangeText}
           style={[styles.searchInput, searchInputStyle]}
+          onFocus={this.props.onFocus}
+          onBlur={this.props.onBlur}
         />
         <View
           style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
@@ -60,7 +62,9 @@ export default class SearchBar extends React.PureComponent {
   }
 
   _handleClear = () => {
-    this.setState({ text: '' });
+    this.setState({ text: '' }, () => {
+      this.props.onChangeQuery('');
+    });
   };
   _handleChangeText = text => {
     this.setState({ text });

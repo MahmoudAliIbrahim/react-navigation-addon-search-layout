@@ -50,6 +50,8 @@ export default class SearchLayout extends React.Component {
               this.props.searchInputTintColor || this.props.headerTintColor
             }
             iconColor={this.props.headerIconColor}
+            onFocus={this.props.onSearchFocus}
+            onBlur={this.props.onSearchBlur}
           />
         </Header>
 
@@ -63,6 +65,5 @@ export default class SearchLayout extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
   },
 });
