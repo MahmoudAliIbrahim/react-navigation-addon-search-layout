@@ -42,10 +42,6 @@ class PlaceholderButtonSearchBar extends React.PureComponent {
               placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
               selectionColor={this.props.selectionColor}
               style={styles.searchInput}
-              onSubmitEditing={this._handleSubmit}
-              onChangeText={this._handleChangeText}
-              onFocus={this.props.onFocus}
-              onBlur={this.props.onBlur}
             />
 
             <SearchIcon />
@@ -128,6 +124,8 @@ export default class SearchBar extends React.PureComponent {
             placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
             onSubmitEditing={this._handleSubmit}
             style={[styles.searchInput, searchInputStyle]}
+            onFocus={this.props.onFocus}
+            onBlur={this.props.onBlur}
           />
 
           <SearchIcon />
