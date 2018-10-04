@@ -3,11 +3,12 @@ import { Animated, Dimensions, Platform, StyleSheet, View, StatusBar } from 'rea
 import { withNavigation, HeaderBackButton } from 'react-navigation';
 
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 50 : 56;
+const STATUSBAR_HEIGHT = StatusBar.currentHeight;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
 
 @withNavigation
 export default class Header extends React.PureComponent {
-  static HEIGHT = APPBAR_HEIGHT;
+  static HEIGHT = APPBAR_HEIGHT + STATUSBAR_HEIGHT;
 
   _navigateBack = () => {
     this.props.navigation.goBack(null);
@@ -70,7 +71,8 @@ if (Platform.OS === 'ios') {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    height: APPBAR_HEIGHT,
+    paddingTop: STATUSBAR_HEIGHT,
+    height: STATUSBAR_HEIGHT + APPBAR_HEIGHT,
     ...platformContainerStyles,
   },
   appBar: {
