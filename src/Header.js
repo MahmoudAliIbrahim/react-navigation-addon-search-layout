@@ -3,7 +3,7 @@ import { Animated, Dimensions, Platform, StyleSheet, View, StatusBar } from 'rea
 import { withNavigation, HeaderBackButton } from 'react-navigation';
 
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 50 : 56;
-const STATUSBAR_HEIGHT = StatusBar.currentHeight;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? StatusBar.currentHeight : 0;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
 
 @withNavigation
