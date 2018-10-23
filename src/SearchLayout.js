@@ -52,6 +52,7 @@ export default class SearchLayout extends React.Component {
             iconColor={this.props.headerIconColor}
             onFocus={this.props.onSearchFocus}
             onBlur={this.props.onSearchBlur}
+            value={this.props.value}
           />
         </Header>
 

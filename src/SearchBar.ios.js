@@ -59,7 +59,6 @@ class PlaceholderButtonSearchBar extends React.PureComponent {
 @withNavigation
 export default class SearchBar extends React.PureComponent {
   state = {
-    text: '',
     showCancelButton: false,
     inputWidth: SearchContainerWidth,
   };
@@ -116,7 +115,7 @@ export default class SearchBar extends React.PureComponent {
             }}
             clearButtonMode="while-editing"
             onChangeText={this._handleChangeText}
-            value={this.state.text}
+            value={this.props.value}
             autoCapitalize="none"
             autoCorrect={false}
             returnKeyType="search"
@@ -160,13 +159,12 @@ export default class SearchBar extends React.PureComponent {
   }
 
   _handleChangeText = text => {
-    this.setState({ text });
     this.props.onChangeQuery && this.props.onChangeQuery(text);
   };
 
   _handleSubmit = () => {
-    let { text } = this.state;
-    this.props.onSubmit && this.props.onSubmit(text);
+    const { value } = this.props;
+    this.props.onSubmit && this.props.onSubmit(value);
     this._textInput.blur();
   };
 
